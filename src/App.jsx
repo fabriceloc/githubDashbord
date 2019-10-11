@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from "./Header";
-import Search from "./Search";
 
 import {
   BrowserRouter as Router,
@@ -14,6 +13,7 @@ import {
 import User from "./User";
 import Depot from "./Depot";
 import { Container, Row, Col } from 'reactstrap';
+import Home from "./Home";
 
 
 class App extends Component {
@@ -28,16 +28,11 @@ class App extends Component {
                   <Row>
                       <Header/>
                   </Row>
-                  <Row>
-                      <Col>Vous pouvez rechercher les noms d'utilisateur de github. </Col>
-                  </Row>
-                  <br/>
-                  <br/>
               </Container>
-              <Search/>
             <Switch>
-              <Route path="/user/:idUser" component={User}/>
-              <Route path="/depot/:repo/:username" component={Depot}/>
+                <Route exact path="/" component={Home} />
+                <Route path="/user/:idUser" component={User}/>
+                <Route path="/depot/:repo/:username" component={Depot}/>
             </Switch>
           </div>
         </Router>
