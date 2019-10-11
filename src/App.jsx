@@ -13,6 +13,8 @@ import {
 } from "react-router-dom";
 import User from "./User";
 import Depot from "./Depot";
+import { Container, Row, Col } from 'reactstrap';
+
 
 class App extends Component {
   constructor(props){
@@ -22,7 +24,16 @@ class App extends Component {
     return (
         <Router>
           <div className="App">
-              <Header/>
+              <Container>
+                  <Row>
+                      <Header/>
+                  </Row>
+                  <Row>
+                      <Col>Vous pouvez rechercher les noms d'utilisateur de github. </Col>
+                  </Row>
+                  <br/>
+                  <br/>
+              </Container>
               <Search/>
             <Switch>
               <Route path="/user/:idUser" component={User}/>

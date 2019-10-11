@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import {Link} from "react-router-dom";
+import Button from 'react-bootstrap/Button';
+
 
 const API_URL = 'https://api.github.com/search/users?q='
 
@@ -40,6 +42,7 @@ class Search extends Component {
                     ref={input => this.search = input}
                     onChange={this.handleInputChange}
                 />
+
                 <ul>
                     {this.state.results.map(function (d, idx) {
                         return (<li key={idx}> <Link to={`/user/${d.id}`}>{d.login}</Link> <img src={d.avatar_url} height={30}/></li>)
