@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import axios from "axios";
-import {Link} from "react-router-dom";
 
 const API_URL_REPO = 'https://api.github.com/repos/'
 
@@ -32,12 +31,14 @@ export default class Depot extends Component{
         let val = this.state.result;
         return(
            <div>
-              <div>nom : {val.name} </div>
-              <div>language : {val.language} </div>
-              <div>starts : {val.stargazers_count} </div>
-              <div>description : {val.description} </div>
-              <div>Dates de création et de mise à jour : { new Date(val.created_at).toLocaleDateString() }  -  {  new Date(val.updated_at).toLocaleDateString() }  </div>
-              <div>Lien vers la page Github : <a href={val.html_url}> voir le depot sur github</a></div>
+              <h2>nom : {val.name} </h2>
+               <ul>
+                   <li>language : {val.language} </li>
+                   <li>starts : {val.stargazers_count} </li>
+                   <li>description : {val.description} </li>
+                   <li>Dates de création et de mise à jour : { new Date(val.created_at).toLocaleDateString() }  -  {  new Date(val.updated_at).toLocaleDateString() }  </li>
+                   <li>Lien vers la page Github : <a href={val.html_url}> voir le depot sur github</a></li>
+               </ul>
            </div>
         )
     }

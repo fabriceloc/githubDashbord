@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import {Link} from "react-router-dom";
-import Button from 'react-bootstrap/Button';
 
 
 const API_URL = 'https://api.github.com/search/users?q='
